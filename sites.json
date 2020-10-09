@@ -1,0 +1,10 @@
+[
+    {
+        "name": "redfin",
+        "xpath": "//div[@class='RedfinEstimateValueHeader']/div[contains(@class, 'value')]/text()"
+    },
+    {
+        "name": "zillow",
+        "xpath": "//div[@class='zestimate-value']/text()"
+    }
+]
