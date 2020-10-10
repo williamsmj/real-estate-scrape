@@ -4,11 +4,11 @@ Get the estimated value of an address from Redfin and Zillow every night and
 store the result.
 
 Redfin and Zillow both give you an estimate of the current market value of your
-home. That estimate is given to the nearest dollar, and comes with a chart that
+home. That estimate is given to the nearest dollar (!) and comes with a chart that
 claims to be the history of that estimate. That historical chart is a lie. The
 estimate for today bounces around a lot, but they retcon the history to pretend
 it doesn't. The precision of today's estimate and the smoothness of the chart
-make the estimate look ridiculously trustworth. This scraper captures the
+make the estimate look ridiculously trustworthy. This scraper captures the
 bouncing, which gives you a good idea how much to trust the current value
 (probably good to 10-20% at most).
 
@@ -29,7 +29,8 @@ cron job.
    a couple of dollars will buy you enough Proxybot credits to last for the
    remainder of your mortgage.
 
-2. Fork this repository on GitHub
+2. Fork this repository on GitHub and commit a change deleting the file
+   data.csv.
 
 3. Under Settings > Secrets, configure environment variables containing the URLs
    of the address on Redfin and Zillow and your Proxybot key:
