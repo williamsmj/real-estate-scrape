@@ -20,8 +20,9 @@ def get_value(url, xpath, proxy=True):
     # User-Agent required otherwise you get blocked
     session.headers.update({"User-Agent": "Mozilla/5.0"})
     try:
-        proxybot_key = os.environ["PROXYBOT_KEY"]
-        url = f"https://proxybot.io/api/v1/{proxybot_key}?url={url}"
+        scraperbox_key = os.environ["SCRAPERBOX_KEY"]
+        session.params = {"token": scraperbox_key, "url": url}
+        url = "https://api.scraperbox.com/scrape"
     except KeyError:
         pass
     response = session.get(url, timeout=60)
