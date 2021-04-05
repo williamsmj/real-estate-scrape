@@ -9,7 +9,7 @@ import requests
 from lxml import html
 
 csvfile = "data.csv"
-plotfile = "data.pdf"
+plotfile = "data.png"
 
 with open("sites.json") as f:
     sites = json.load(f)
@@ -80,6 +80,11 @@ def append_csv(values):
 def plot_file():
     df = pd.read_csv(csvfile, index_col="date", parse_dates=True)
     ax = df.plot()
+    ax.ticklabel_format(style="plain", axis="y")  # no exponential notation on y-axis
+    ax.set_ylabel("Estimated value ($)")
+    ax.set_xlabel(f"Date (last updated {df.index[-1].date().isoformat()})")
+    ax.grid()
+    plt.rcParams["savefig.dpi"] = 144
     ax.get_figure().savefig(plotfile, bbox_inches="tight")
 
 

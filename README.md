@@ -3,6 +3,8 @@
 Get the estimated value of an address from Redfin and Zillow every night and
 store the result.
 
+![Plot of Redfin and Zillow valuation as a function of time](data.png)
+
 Redfin and Zillow both give you an estimate of the current market value of your
 home. That estimate is given to the nearest dollar (!) and comes with a chart that
 claims to be the history of that estimate. That historical chart is a lie. The
@@ -12,7 +14,7 @@ make the estimate look ridiculously trustworthy. This scraper captures the
 bouncing, which gives you a good idea how much to trust the current value
 (probably good to 10-20% at most).
 
-See [`data.csv`](data.csv) and [`data.pdf`](data.pdf) for example output for
+See [`data.csv`](data.csv) and [`data.png`](data.png) for example output for
 [594 S Mapleton Dr, Los
 Angeles](https://www.redfin.com/CA/Los-Angeles/594-S-Mapleton-Dr-90024/home/6824711)
 (not my house, maybe I should stop giving away my elite scraping code for free).
@@ -40,7 +42,7 @@ cron job.
 
 The scraping job runs every day at 5am UTC. Come back in 24 hours and you should
 find `data.csv` in your forked repository. Come back a few days later and you
-should see the beginnings of a chart in `data.pdf`.
+should see the beginnings of a chart in `data.png`.
 
 Alternatively, you can run the scraping job manually as often as you like by
 clicking "Run workflow" under Actions > scrape on GitHub.
