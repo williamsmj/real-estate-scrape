@@ -15,14 +15,17 @@ with open("sites.json") as f:
     sites = json.load(f)
 
 
-def get_value(url, xpath, proxy=True):
+def get_value(url, xpath):
     session = requests.Session()
     # User-Agent required otherwise you get blocked
     session.headers.update({"User-Agent": "Mozilla/5.0"})
     try:
-        scraperbox_key = os.environ["SCRAPERBOX_KEY"]
-        session.params = {"token": scraperbox_key, "url": url}
-        url = "https://api.scraperbox.com/scrape"
+        scraperapi_key = os.environ["SCRAPERAPI_KEY"]
+        session.params = {
+            "api_key": scraperapi_key,
+            "url": url,
+        }
+        url = "http://api.scraperapi.com"
     except KeyError:
         pass
     response = session.get(url, timeout=60)

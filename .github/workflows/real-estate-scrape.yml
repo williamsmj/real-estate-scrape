@@ -29,7 +29,7 @@ jobs:
       env:
         REDFIN_URL: ${{ secrets.REDFIN_URL }}
         ZILLOW_URL: ${{ secrets.ZILLOW_URL }}
-        SCRAPERBOX_KEY: ${{ secrets.SCRAPERBOX_KEY }}
+        SCRAPERAPI_KEY: ${{ secrets.SCRAPERAPI_KEY }}
       run: python real_estate_scrape.py
     - name: Commit and push if it changed
       run: |-
