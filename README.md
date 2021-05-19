@@ -26,11 +26,11 @@ cron job.
 
 ## Usage: recurring job
 
-1. Sign up for [ScraperBox](https://scraperbox.com/) and make a note of your API
-   key. The free account is enough to get started.
+1. Sign up for [scraperapi](https://www.scraperapi.com/) and make a note of your
+   API key. The free account is enough to get started.
 
-2. Fork this repository on GitHub and commit a change deleting the file
-   data.csv.
+2. Make a copy of this repository, e.g. [using the
+   template](https://github.com/mikepqr/real-estate-scrape/generate).
 
 3. Under Settings > Secrets, configure environment variables containing the URLs
    of the address on Redfin and Zillow and your ScraperBox key:
@@ -38,10 +38,10 @@ cron job.
       `https://www.redfin.com/CA/Los-Angeles/594-S-Mapleton-Dr-90024/home/6824711`
     - `ZILLOW_URL`, e.g.
       `https://www.zillow.com/homedetails/594-S-Mapleton-Dr-Los-Angeles-CA-90024/20524417_zpid/`
-    - `SCRAPERBOX_KEY`, e.g.`abcdefqwert12345`
+    - `SCRAPERAPI_KEY`, e.g.`abcdefqwert12345`
 
 The scraping job runs every day at 5am UTC. Come back in 24 hours and you should
-find `data.csv` in your forked repository. Come back a few days later and you
+find `data.csv` in your repository. Come back a few days later and you
 should see the beginnings of a chart in `data.png`.
 
 Alternatively, you can run the scraping job manually as often as you like by
@@ -50,9 +50,9 @@ clicking "Run workflow" under Actions > scrape on GitHub.
 ## Usage: manually from your own machine
 
 Clone the repository, export `REDFIN_URL` and `ZILLOW_URL` and run `python
-real_estate_scrape.py`. You probably won't need ScraperBox if you're running
+real_estate_scrape.py`. You probably won't need scraperapi if you're running
 this from a home internet connection, in which case simply don't set
-`SCRAPERBOX_KEY`.
+`SCRAPERAPI_KEY`.
 
 ## Adding a new site
 
