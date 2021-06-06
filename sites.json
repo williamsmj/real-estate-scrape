@@ -5,6 +5,6 @@
     },
     {
         "name": "zillow",
-        "xpath": "//div[@class='zestimate-value']/text()"
+        "xpath": "//div[@id='home-details-home-values']//h3/text()"
     }
 ]
